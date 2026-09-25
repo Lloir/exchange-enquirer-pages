@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Exchange Enquirer: Federal Jail Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Oswald:wght@500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E6E5DE; --paper-2:#DAD8CF; --ink:#1C1C22; --ink-soft:#4A4A52;
+  --red:#B3121B; --red-ink:#fff; --rule:#1C1C22; --star:#E0A91B;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#16171C; --paper-2:#20222A; --ink:#E8E6DF; --ink-soft:#A9A7A0;
+    --red:#E0434B; --red-ink:#16171C; --rule:#E8E6DF; --star:#F2C230;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#16171C; --paper-2:#20222A; --ink:#E8E6DF; --ink-soft:#A9A7A0;
+  --red:#E0434B; --red-ink:#16171C; --rule:#E8E6DF; --star:#F2C230;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;font-size:1.06rem;line-height:1.55}
+.sheet{max-width:1080px;margin:0 auto;padding:1.25rem 1.25rem 3rem}
+.masthead{text-align:center;border-bottom:4px double var(--rule);padding-bottom:.6rem}
+.masthead .tag{display:flex;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--ink-soft);
+  border-bottom:1px solid var(--rule);padding-bottom:.35rem;flex-wrap:wrap}
+.nameplate{font-family:"UnifrakturMaguntia","Old English Text MT",serif;font-weight:400;
+  font-size:clamp(2.6rem,9vw,5.6rem);line-height:1;margin:.5rem 0 .2rem;letter-spacing:.01em}
+.motto{font-style:italic;color:var(--ink-soft);margin:0}
+.banner{background:var(--red);color:var(--red-ink);font-family:Oswald,Impact,"Arial Narrow",sans-serif;
+  font-weight:700;text-align:center;padding:.35rem .5rem;margin:.6rem 0 0;font-size:1.05rem;letter-spacing:.04em}
+nav.pages{display:flex;gap:.25rem;flex-wrap:wrap;justify-content:center;margin:1rem 0 1.25rem;
+  border-bottom:1px solid var(--rule);padding-bottom:.75rem}
+nav.pages button{font-family:Oswald,"Arial Narrow",sans-serif;font-weight:500;font-size:.95rem;
+  background:transparent;color:var(--ink);border:1px solid transparent;padding:.35rem .7rem;cursor:pointer}
+nav.pages button[aria-current="page"]{border-color:var(--rule);background:var(--paper-2)}
+nav.pages button:focus-visible,.pager button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.page{display:none}
+.page.on{display:block}
+.folio{font-family:Oswald,"Arial Narrow",sans-serif;font-size:.85rem;color:var(--ink-soft);
+  display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);margin-bottom:1rem;padding-bottom:.2rem}
+h1.hed,h2.hed,h3.hed{font-family:Oswald,Impact,"Arial Narrow",sans-serif;font-weight:700;line-height:1.02;margin:0 0 .5rem;text-transform:uppercase}
+h1.hed{font-size:clamp(2.4rem,8vw,5.2rem);letter-spacing:-.01em}
+h2.hed{font-size:clamp(1.6rem,4.5vw,2.6rem)}
+h3.hed{font-size:1.3rem}
+.dek{font-size:1.3rem;font-style:italic;margin:0 0 1rem;max-width:60ch}
+.byline{font-family:Oswald,"Arial Narrow",sans-serif;font-size:.85rem;color:var(--ink-soft);margin:0 0 .8rem}
+.cols{columns:3 17rem;column-gap:2rem;column-rule:1px solid var(--paper-2)}
+.cols p{margin:0 0 .8rem}
+.cols p:first-child::first-letter{font-family:Oswald,sans-serif;font-weight:700;float:left;font-size:3.6rem;line-height:.85;margin:.3rem .4rem 0 0;color:var(--red)}
+.pull{break-inside:avoid;border-top:3px solid var(--red);border-bottom:1px solid var(--rule);
+  margin:.4rem 0 1rem;padding:.6rem 0;font-family:Oswald,"Arial Narrow",sans-serif;font-size:1.35rem;line-height:1.2}
+.pull cite{display:block;font-family:"Newsreader",serif;font-style:italic;font-size:.9rem;color:var(--ink-soft);margin-top:.3rem}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:2rem;margin-top:1.5rem}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.box{border:2px solid var(--rule);padding:1rem;background:var(--paper-2);break-inside:avoid}
+.box h3.hed{border-bottom:1px solid var(--rule);padding-bottom:.3rem}
+ol.timeline{list-style:none;margin:0;padding:0}
+ol.timeline li{display:grid;grid-template-columns:3.4rem 1fr;gap:.5rem;padding:.35rem 0;border-bottom:1px dotted var(--ink-soft);font-size:.97rem}
+ol.timeline time{font-family:Oswald,sans-serif;font-weight:700;color:var(--red)}
+hr.heavy{border:0;border-top:3px solid var(--rule);margin:2rem 0 1.2rem}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:.4rem .5rem;border-bottom:1px solid var(--ink-soft)}
+th{font-family:Oswald,sans-serif;font-weight:500;border-bottom:2px solid var(--rule)}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+.stamp{display:inline-block;border:3px solid var(--red);color:var(--red);font-family:Oswald,sans-serif;font-weight:700;
+  padding:.1rem .6rem;transform:rotate(-4deg);margin:.2rem 0 1rem;font-size:1.1rem}
+.classifieds{columns:3 14rem;column-gap:1.5rem}
+.ad{break-inside:avoid;border:1px solid var(--rule);padding:.7rem .8rem;margin:0 0 1rem;font-size:.95rem}
+.ad strong{font-family:Oswald,sans-serif;font-weight:700;font-size:1.05rem;display:block;margin-bottom:.2rem}
+.letters p{margin:0 0 .3rem}
+.letters .sig{font-style:italic;color:var(--ink-soft);margin-bottom:1.1rem}
+.note{font-style:italic;color:var(--ink-soft);font-size:.95rem;border-left:3px solid var(--red);padding-left:.8rem;margin:1.5rem 0}
+.pager{display:flex;justify-content:space-between;margin-top:2.5rem;border-top:1px solid var(--rule);padding-top:1rem;gap:1rem}
+.pager button{font-family:Oswald,sans-serif;font-size:1rem;background:var(--ink);color:var(--paper);border:0;padding:.55rem 1rem;cursor:pointer}
+.pager button[disabled]{opacity:.3;cursor:default}
+.star{color:var(--star)}
+
+.xwrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:2rem;align-items:start}
+@media (max-width:820px){.xwrap{grid-template-columns:1fr}}
+.xgrid{display:grid;gap:0;border:2px solid var(--rule);background:var(--ink);max-width:560px;width:100%}
+.xc,.xb{aspect-ratio:1;position:relative}
+.xb{background:var(--ink)}
+.xc{background:var(--paper);outline:1px solid var(--ink)}
+.xc input{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;text-align:center;
+  font-family:Oswald,"Arial Narrow",sans-serif;font-weight:700;font-size:clamp(.7rem,2.6vw,1.25rem);text-transform:uppercase;color:var(--ink);padding:0;padding-top:.15em}
+.xc input:focus{outline:3px solid var(--red);outline-offset:-3px;background:var(--paper-2)}
+.xc input.bad{color:var(--red)}
+.xc input.good{color:var(--ink)}
+.xn{position:absolute;top:1px;left:2px;font-size:.55rem;font-family:Oswald,sans-serif;line-height:1;pointer-events:none;color:var(--ink)}
+.xclues{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+@media (max-width:520px){.xclues{grid-template-columns:1fr}}
+.xclues ol{list-style:none;margin:0;padding:0;font-size:.95rem}
+.xclues li{margin:0 0 .35rem;padding-left:1.7rem;text-indent:-1.7rem}
+.xclues li b{font-family:Oswald,sans-serif;display:inline-block;width:1.7rem;text-indent:0}
+.xbtns{grid-column:1/-1;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.xbtns button{font-family:Oswald,sans-serif;background:var(--ink);color:var(--paper);border:0;padding:.45rem .8rem;cursor:pointer}
+.xbtns button:focus-visible,.quiz-ans summary:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+#xmsg{font-style:italic;color:var(--ink-soft)}
+.scopes{margin:0}
+.scopes dt{font-family:Oswald,sans-serif;font-weight:700;color:var(--red);float:left;width:3.4rem;clear:left}
+.scopes dd{margin:0 0 .6rem 3.6rem}
+.quiz{margin:0 0 .6rem;padding-left:1.4rem}
+.quiz li{margin-bottom:.25rem;font-style:italic}
+.pick{font-size:.92rem;color:var(--ink-soft)}
+.quiz-ans summary{cursor:pointer;font-family:Oswald,sans-serif}
+.xanswers{display:none}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="masthead">
+    <div class="tag"><span>Vol. I, Federal Jail Edition</span><span>General chat, 21 to 22 September</span><span>Price: one cheap ration</span></div>
+    <div class="nameplate">The Exchange Enquirer</div>
+    <p class="motto">All the chat that's fit to screenshot</p>
+    <div class="banner">Boosting confirmed · Owner in federal jail · TiT demands to be banned</div>
+  </header>
+
+  <nav class="pages" aria-label="Pages">
+    <button data-p="0">Front page</button>
+    <button data-p="1">Crime &amp; courts</button>
+    <button data-p="2">Business</button>
+    <button data-p="3">Society &amp; culture</button>
+    <button data-p="4">Letters &amp; classifieds</button>
+    <button data-p="5">Puzzles &amp; pastimes</button>
+  </nav>
+
+  <!-- PAGE 1 -->
+  <section class="page" id="p0">
+    <div class="folio"><span>Page 1</span><span>Front page</span></div>
+    <h1 class="hed">233% in a day. Then jail.</h1>
+    <p class="dek">Redshift Endeavors is locked up for boosting after a general chat standoff that TiT bet the farm on, and lost within half an hour.</p>
+    <p class="byline">By the Enquirer's exchange desk</p>
+    <div class="cols">
+      <p>It began, as the great scandals do, with a leaderboard. At half past seven on Sunday evening Sparky of RNK noticed that a guildmate who should have been second on the newspaper's fastest-growers list simply wasn't there. Holue of GR explained the rule: under seven days old, no seven-day growth figure. Case closed, briefly.</p>
+      <p>Then Sparky spotted something else. TiT's Redshift Endeavors had grown 233% in a single day, from roughly 60 million to around 150 million CV. Holue called it plainly: boosting. He pointed to a pile of cows "mysteriously bought" just as Redshift was selling, cows being one of those goods almost nobody genuinely buys on the exchange.</p>
+      <div class="pull">"Nothing on his exchange in the last 24 hours explains his growth."<cite>Holue, standing firm</cite></div>
+      <p>TiT closed ranks. Ares Inc. insisted it was successful market flipping. Cracklor Logistics argued that the whole economy was on an uptick. SL Refining suggested Holue simply didn't understand it. Farmy McFarm Face The 7th went further than anyone, offering a wager that would echo all night: if Redshift was being boosted by TiT, the devs could ban him permanently.</p>
+      <p>At 19:53 Farmy took the question to DEV Builder Inc. directly. At 19:59 the answer arrived: at least three people in TiT were boosting Redshift heavily. Farmy's reply was two words long and, to his credit, immediate: "I'm wrong."</p>
+      <p>By 20:00 Redshift's profile read "Owner is in federal jail." Sparky, who had started the whole thing, admitted he hadn't expected the devs to actually look. Holue, who has spent months being told he was imagining things, allowed himself a "wow what a surprise."</p>
+      <p>The sting in the tail came fourteen minutes later, when it emerged that the heaviest outside buyer was not in TiT at all. That story, and the jailbreak protest that followed, continues on page 2.</p>
+    </div>
+
+    <div class="grid">
+      <div>
+        <h2 class="hed">The half hour that did it</h2>
+        <ol class="timeline">
+          <li><time>19:33</time><span>Sparky flags Redshift's 233% day.</span></li>
+          <li><time>19:34</time><span>Holue: "normal tit boosting." Cows cited as evidence.</span></li>
+          <li><time>19:40</time><span>Ares Inc.: not boosting, just market flipping.</span></li>
+          <li><time>19:45</time><span>TiT benches pile in on Holue.</span></li>
+          <li><time>19:48</time><span>Farmy stakes a permanent ban on Redshift's innocence.</span></li>
+          <li><time>19:53</time><span>Farmy messages DEV Builder Inc.</span></li>
+          <li><time>19:59</time><span>Builder: at least three TiT members boosting heavily.</span></li>
+          <li><time>20:00</time><span>Redshift enters federal jail. General chat erupts.</span></li>
+        </ol>
+      </div>
+      <aside class="box">
+        <h3 class="hed">A deal is a deal</h3>
+        <p>Having lost the bet, Farmy spent the next ninety minutes demanding that it be honoured, in capitals. "IT'S THE DEAL I MADE. EVEN IF I HAVE TO GET MYSELF BANNED." Holue observed that nobody was going to make him a martyr. Farmy offered to change his name to Martyr. The devs, sensibly, did not engage.</p>
+        <p style="margin-bottom:0"><em>Also noted:</em> Bob Corp's forensic finding that Redshift's icon isn't even red.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- PAGE 2 -->
+  <section class="page" id="p1">
+    <div class="folio"><span>Page 2</span><span>Crime &amp; courts</span></div>
+    <h2 class="hed">Coss: "This one is 100% on me"</h2>
+    <p class="dek">The biggest buyer steps forward, TiT claims victim status, and a guild petitions to be arrested.</p>
+    <div class="cols">
+      <p>If TiT hoped the story would stop at Redshift, it did not reckon with Coss. At 20:13, freshly arrived in TiT after a turbulent week, he laid out his own part without being asked. His habit, he explained, was to invite guildmates to send him a contract at whatever price worked for them and accept it blind. He had done exactly that with Redshift.</p>
+      <div class="pull">"I was buying nanotubes from him for 2x current market on 3 separate occasions. It was roughly 22k units."<cite>Coss, in general chat</cite></div>
+      <p>He told the devs to action him if needed and said he would take any punishment necessary, while restating that he is firmly against boosting beyond reasonable guild or friend discounts. General chat, being general chat, responded by proposing that his punishment be to grow, then to restart fully self-sufficient, and finally that he rename himself Moss.</p>
+      <p>Cracklor Logistics offered the defence's closing argument: four boosters and five semi-boosters, most of them outside TiT, with Coss only a minor player. TiT, he said, was the victim of targeting and "anti TiT propaganda." Pear Inc. summed up the room's reaction: "Ok so tit is the victim." Sumran Consortium noted it was the second time a TiT member had been banned for boosting, and suggested disbanding the guild, winky face included.</p>
+      <p>Tato Industries offered the evening's most honest take on the rules themselves: boosting is kept a deliberate grey area, because clear lines would just be gamed. Everyone does a bit of it. The trick is not to get caught.</p>
+    </div>
+
+    <hr class="heavy">
+
+    <h2 class="hed">The great jailbreak (into jail)</h2>
+    <span class="stamp">Protest</span>
+    <div class="cols">
+      <p>What followed will be studied by future historians of the galaxy as the first recorded protest in which the demand was to be arrested. From about 21:25, TiT members took turns asking DEV Builder Inc. to ban them. "WE HUMBLY REQUEST TO BE BANNED," read one petition. Ares Inc. wanted a ban so he could stop playing. Farmy wanted a ban on principle.</p>
+      <p>At 21:34 Pear Inc. broke the news: Farmy was in jail, reportedly for spam. Cracklor declared a riot over unfair dismissal, arguing the offence was historical. Hashtags bloomed: #FREEFARMY, #FREEFLIP, #FREECARLY. Farmy was released at 21:40, at which point Lek reported that Flip Co had been jailed in his place. Cracklor, still free, complained that people on Discord were mocking him for not being banned.</p>
+      <p>Drunkenduo's Ruthless Dividend, who admitted to being part of the boosting, left TiT for a guild that the chat understood to be a one-man prison. Pear Inc. later joined it too, and asked if anyone wanted to visit him in jail. Frugal Factories raised the jurisprudential question of the night: if you join voluntarily, is it still jail?</p>
+    </div>
+
+    <div class="grid">
+      <div>
+        <h3 class="hed">The confession nobody asked for</h3>
+        <p>At 22:10, hunting for a ban of his own, Cracklor announced that he had washed the chicken market several times by passing trades back and forth to lift the average price, and that he once jumped 2.7 billion CV in a day against a usual 400 million. Drunkenduo said he helped. Cracklor said he was surprised it never got flagged.</p>
+        <p>The Enquirer notes, without judgement, that a confession typed in public chat to get yourself banned is still a confession typed in public chat. Whether it was true, or simply the loudest bid yet for a jail cell, is a matter for the devs.</p>
+      </div>
+      <aside class="box">
+        <h3 class="hed">Exile economics</h3>
+        <p>Cracklor, briefly guildless, discovered the no-guild surprise at the worst moment: his 800kt ship landed at an exchange warehouse capped at 3kt, with roughly 10Mt more to unload later. "I have made a grave, grave error," he reported, from outside the admin centre he had helped fund with 700m in donations the day before.</p>
+        <p style="margin-bottom:0">Pear Inc. later posted a warehouse reading 5,537,789 used against a 3,000t cap.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- PAGE 3 -->
+  <section class="page" id="p2">
+    <div class="folio"><span>Page 3</span><span>Business</span></div>
+    <h2 class="hed">Coss takes the crown at PvP</h2>
+    <p class="dek">48 hours after joining TiT, the galaxy's most discussed trader finds himself leading his own guild, with a science plan to match.</p>
+    <div class="cols">
+      <p>Coss logged in on Monday night to learn that he had been removed from his old guild and was now officially the leader of a new one. According to Cracklor, the motivation behind his promotion was simply that ATS would be furious. StarkyDog Enterprise congratulated him on finding the fee. Coss called it a steep expense and said he now needed to recruit.</p>
+      <div class="pull">"No single person will feel like I've abused them, the entire galaxy can!"<cite>Coss, outlining the PvP mission</cite></div>
+      <p>His first order of business is ambitious: flood the galaxy with T4 science, run the chain at net neutral, and sell at breakeven, flattening everyone along the way. AMY of RAS summarised it as Coss declaring war on science itself. Asked by Ares how long until PvP overtakes GR, StarkyDog guessed six or seven days; Coss said there would be little donating and mostly warehouse.</p>
+      <p>By Tuesday afternoon he was already weary. Three new planets had produced four complaining DMs. ManuCo suggested going fully vertically integrated so nobody could object, and the two exchanged a warm farewell after their time together in ATS.</p>
+    </div>
+
+    <hr class="heavy">
+
+    <div class="grid">
+      <div>
+        <h2 class="hed">The headhunter lottery</h2>
+        <p>Tuesday's second business story was a grievance. H3O of ATS reported 32 headhunts at the biggest firm with no legendary specialist to show for it, and the chat quickly turned into an informal survey. Zinc's refinery put H3O's specific result at a 0.0016% chance, before a second calculation softened that to about 0.24% for that result or worse. The Enquirer's own table follows.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Company</th><th style="text-align:right">Hunts</th><th style="text-align:right">Legendaries</th></tr></thead>
+            <tbody>
+              <tr><td>H3O (ATS)</td><td class="num">32</td><td class="num">0</td></tr>
+              <tr><td>Voidsteel Conglomerate (SRS)</td><td class="num">37</td><td class="num">0</td></tr>
+              <tr><td>Deutsche Metalle AG (GP)</td><td class="num">43</td><td class="num">0</td></tr>
+              <tr><td>Medici Mining (GP)</td><td class="num">29</td><td class="num">0</td></tr>
+              <tr><td>Bob Corp (ATS)</td><td class="num">29</td><td class="num">1</td></tr>
+              <tr><td>Sumran Consortium (ATS)</td><td class="num">34</td><td class="num">1</td></tr>
+              <tr><td>Zinc's refinery (TiT)</td><td class="num">~60</td><td class="num">1</td></tr>
+              <tr><td>The New Belgian Company (F4T)</td><td class="num">~14</td><td class="num">2</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:.9rem;color:var(--ink-soft)">Self-reported. Zinc added that he would not wish his one legendary on his worst enemy. Entropy's decent rolls keep refusing core-world work.</p>
+      </div>
+      <aside class="box">
+        <h3 class="hed">Market briefs</h3>
+        <p><strong>GR soars.</strong> Holue logged 2.5% growth in a day. Xtopia of DSP pointed out that on 25B, that is a lot.</p>
+        <p><strong>Cement pivot.</strong> sobeantuh rock sorting llc of GTB has abandoned lime-flavoured rocks for a vertically integrated cement strategy. See you at the exchange.</p>
+        <p><strong>Climbing.</strong> aldera mining company of GP reports top 6 in base count and top 14 in metallurgy.</p>
+        <p><strong>Stars or prestige?</strong> Make Stuff INC weighed 25 stars against 8k prestige. Mittcb: prestige, always prestige.</p>
+        <p style="margin-bottom:0"><strong>Exec trading.</strong> Cracklor's forecast: around Christmas, by which point today's execs will be long gone.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- PAGE 4 -->
+  <section class="page" id="p3">
+    <div class="folio"><span>Page 4</span><span>Society &amp; culture</span></div>
+    <h2 class="hed">Pear's odyssey ends in a fruit basket</h2>
+    <p class="dek">One man's journey from TiT loyalist to prison volunteer to a guild that is renaming itself after produce.</p>
+    <div class="cols">
+      <p>Few citizens of the galaxy had a longer 24 hours than Pear Inc. He opened by demanding that DEV Devine Intervention ban TiT, pledged an exposé on how TiT cheats, and announced that he needed to protect his clean-boy reputation. Then he joined the jail guild, then declared "I MISS TIT" the next morning, then went looking for a guild that could break him out of prison.</p>
+      <p>By mid-afternoon he had landed. "I AM IN MY NEW HOME," he wrote, briefly alarming Makuria Inc of SRS, who saw the notification out of context. Asked by Flip Co how things were going, Pear reported that his guildmates were all renaming themselves after fruit, that they planned to ask Builder to rename the guild the fruit basket, and that Rearden Steel was considering Banana Steel. AMY, meanwhile, has made it clear there is no escape from her basement.</p>
+      <p>He is also, by his own account, now beta-testing Farmy's side game and filing his feedback in the only format he knows: capital letters, a request for structural frames, and a complaint that he cannot partially load cargo.</p>
+    </div>
+
+    <hr class="heavy">
+
+    <div class="grid">
+      <div>
+        <h2 class="hed">Old soldiers of the internet</h2>
+        <p>Late on Sunday the protest gave way to something gentler: veterans remembering older games. Farmy, formerly of BoB and Reikoku in EVE Online, was outraged to be mistaken for a Goonswarm member. Entropy called Goonswarm the TiT of EVE, and nobody disagreed. The two traded favourite Goon-era songs, Farmy's "Little Bees" singalong was roundly declared awesome and made before AI, and Entropy lamented that CCP had fallen off.</p>
+        <p>Cracklor recalled leading an ICC raid in World of Warcraft and singing along on Vent during long boss runs. Farmy summed up the mood shift: from angry old men to reliving their teen years in one evening.</p>
+        <p>After midnight the talk turned to Factorio, with TiT's shared base described as one giant build around two spaghetti messes, and then to Dwarf Fortress, which CCCP of GR called the greatest of all time. Cracklor once ran a fortress on a water clock. For Armok.</p>
+      </div>
+      <aside class="box">
+        <h3 class="hed">The bread corner</h3>
+        <p>Just before midnight, general chat briefly became a baking forum. SL Refining has given up shop bread because it always went stale before he finished it, and now bakes his own on a silicone mat that gives a perfect bottom crust. It was a basic one from Walmart.</p>
+        <p>Cracklor's honey loaf smelled like honey on toast while it baked. His comfort food is honey on toasted rye; SL prefers cheese, then butter, then everything bagels. Cracklor's advice: bagels are just a stiffer dough, boiled then baked. Stale bread becomes bread pudding.</p>
+        <p style="margin-bottom:0">Dinner that night: mince on brods.</p>
+      </aside>
+    </div>
+
+    <div class="grid">
+      <div>
+        <h3 class="hed">Heard around the galaxy</h3>
+        <p>Bob Corp introduced Farmy to "Heads Will Roll," which Farmy had been trying to find for ages and then played on repeat. Farmy reported that Destiny 2 is back from the dead. Cracklor promoted Ore and Orbit, a rival space trading game, roughly once every twenty minutes for the entire night, noting on each occasion that it gets updates.</p>
+      </div>
+      <aside class="box">
+        <h3 class="hed">New arrivals</h3>
+        <p style="margin-bottom:0">Three newcomers appeared at 04:04 and were offered a place in GTB within a minute. Their main question was whether guild friends are nice or abusive. Told abuse was allowed if consensual, sobeantuh rock sorting llc replied that he had to apply now.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- PAGE 5 -->
+  <section class="page" id="p4">
+    <div class="folio"><span>Page 5</span><span>Letters &amp; classifieds</span></div>
+    <div class="grid" style="margin-top:0">
+      <div class="letters">
+        <h2 class="hed">Letters to the editor</h2>
+        <p>Sir, I did not have platonic relations with Coss.</p>
+        <p class="sig">aldera mining company, GP</p>
+        <p>Sir, I play this game for the memes and the drama, and frankly it lacks drama. Please disregard this letter in light of recent events.</p>
+        <p class="sig">Farmy McFarm Face The 7th, formerly of federal jail</p>
+        <p>Sir, I have seen your adorable newspaper and I will always embrace its author on that basis alone.</p>
+        <p class="sig">Tato Industries, ATS</p>
+        <p>Sir, please do not ban TiT. I like reading general chat.</p>
+        <p class="sig">meowco, F4T</p>
+        <p>Sir, I do not understand anything that just happened, but I am glad everyone seems to be having a good time.</p>
+        <p class="sig">sobeantuh rock sorting llc, GTB</p>
+        <p>Sir, not enough Bob slander.</p>
+        <p class="sig">Bob Corp, ATS</p>
+      </div>
+      <aside class="box">
+        <h3 class="hed">Catch-up for readers who were away</h3>
+        <p>As kindly compiled for Berlin food distributions by Farmy, lightly edited:</p>
+        <p style="margin:0">Coss played with the market. Coss left ATS and argued with ATS in general. Coss joined TiT. Holue noticed an issue with a TiT member. Farmy said no way. It was boosting. Farmy said he was wrong. The player was banned. Coss and Drunkenduo had been buying from him. Farmy and Flip were jailed for five to ten minutes each. TiT protested for about two hours.</p>
+      </aside>
+    </div>
+
+    <hr class="heavy">
+
+    <h2 class="hed">Classifieds</h2>
+    <div class="classifieds">
+      <div class="ad"><strong>Wanted: one ban</strong>Honourable trader seeks permanent ban to settle a bet. Five minutes accepted. Contact Farmy.</div>
+      <div class="ad"><strong>For sale: conmats</strong>Bannably cheap. Minimum price. Enquire Pear Inc. or Cracklor. Terms subject to dev review.</div>
+      <div class="ad"><strong>To let: basement</strong>Cosy, windowless, no exit. Suits RAS members. Apply AMY. There is no escape.</div>
+      <div class="ad"><strong>Lost</strong>One pear emoji, left hanging for three hours. Answers to "acknowledge my pear." If found, Cracklor, please acknowledge it.</div>
+      <div class="ad"><strong>Guild vacancy</strong>PvP recruiting a small number of members. Must be worthy of the fun. Donations not expected.</div>
+      <div class="ad"><strong>Situations wanted</strong>Returning hero with 800kt ship and 3kt warehouse seeks guild with an admin centre. GR preferred, apparently.</div>
+      <div class="ad"><strong>Public notice</strong>Cows are not a real market. Anyone listing one cow at 350 for a long time will be noticed.</div>
+      <div class="ad"><strong>Petition</strong>Rename the RAS guild to the fruit basket. Signatories so far include one pear and one potential banana.</div>
+      <div class="ad"><strong>Corrections</strong>Redshift's icon is not red. The Enquirer regrets nothing but notes it anyway.</div>
+    </div>
+
+    <p class="note">Editor's note: in the small hours, several threads in general chat drifted from market gossip into personal pile-ons aimed at individual players. This paper covers the trades, the bans and the bread. It won't reprint the rest.</p>
+  </section>
+
+
+  <!-- PAGE 6 -->
+  <section class="page" id="p5">
+    <div class="folio"><span>Page 6</span><span>Puzzles &amp; pastimes</span></div>
+    <h2 class="hed">The Federal Jail cryptic (it isn't cryptic)</h2>
+    <p class="dek">Every answer appeared in general chat this week. No boosting from guildmates.</p>
+    <div class="xwrap">
+      <div class="xgrid" style="grid-template-columns:repeat(15,1fr)"><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><span class="xn">1</span><input maxlength="1" aria-label="Row 1 column 4" data-a="G" data-r="0" data-c="3"></div><div class="xc"><input maxlength="1" aria-label="Row 1 column 5" data-a="O" data-r="0" data-c="4"></div><div class="xc"><span class="xn">2</span><input maxlength="1" aria-label="Row 1 column 6" data-a="O" data-r="0" data-c="5"></div><div class="xc"><input maxlength="1" aria-label="Row 1 column 7" data-a="N" data-r="0" data-c="6"></div><div class="xc"><span class="xn">3</span><input maxlength="1" aria-label="Row 1 column 8" data-a="S" data-r="0" data-c="7"></div><div class="xc"><input maxlength="1" aria-label="Row 1 column 9" data-a="W" data-r="0" data-c="8"></div><div class="xc"><input maxlength="1" aria-label="Row 1 column 10" data-a="A" data-r="0" data-c="9"></div><div class="xc"><input maxlength="1" aria-label="Row 1 column 11" data-a="R" data-r="0" data-c="10"></div><div class="xc"><input maxlength="1" aria-label="Row 1 column 12" data-a="M" data-r="0" data-c="11"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 2 column 6" data-a="R" data-r="1" data-c="5"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 2 column 8" data-a="P" data-r="1" data-c="7"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><span class="xn">4</span><input maxlength="1" aria-label="Row 2 column 15" data-a="F" data-r="1" data-c="14"></div><div class="xb"></div><div class="xb"></div><div class="xc"><span class="xn">5</span><input maxlength="1" aria-label="Row 3 column 3" data-a="C" data-r="2" data-c="2"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 3 column 6" data-a="B" data-r="2" data-c="5"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 3 column 8" data-a="A" data-r="2" data-c="7"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 3 column 15" data-a="A" data-r="2" data-c="14"></div><div class="xc"><span class="xn">6</span><input maxlength="1" aria-label="Row 4 column 1" data-a="B" data-r="3" data-c="0"></div><div class="xc"><input maxlength="1" aria-label="Row 4 column 2" data-a="O" data-r="3" data-c="1"></div><div class="xc"><input maxlength="1" aria-label="Row 4 column 3" data-a="O" data-r="3" data-c="2"></div><div class="xc"><input maxlength="1" aria-label="Row 4 column 4" data-a="S" data-r="3" data-c="3"></div><div class="xc"><input maxlength="1" aria-label="Row 4 column 5" data-a="T" data-r="3" data-c="4"></div><div class="xc"><input maxlength="1" aria-label="Row 4 column 6" data-a="I" data-r="3" data-c="5"></div><div class="xc"><input maxlength="1" aria-label="Row 4 column 7" data-a="N" data-r="3" data-c="6"></div><div class="xc"><input maxlength="1" aria-label="Row 4 column 8" data-a="G" data-r="3" data-c="7"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><span class="xn">7</span><input maxlength="1" aria-label="Row 4 column 12" data-a="P" data-r="3" data-c="11"></div><div class="xc"><input maxlength="1" aria-label="Row 4 column 13" data-a="E" data-r="3" data-c="12"></div><div class="xc"><input maxlength="1" aria-label="Row 4 column 14" data-a="A" data-r="3" data-c="13"></div><div class="xc"><input maxlength="1" aria-label="Row 4 column 15" data-a="R" data-r="3" data-c="14"></div><div class="xc"><input maxlength="1" aria-label="Row 5 column 1" data-a="A" data-r="4" data-c="0"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 5 column 3" data-a="W" data-r="4" data-c="2"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 5 column 6" data-a="T" data-r="4" data-c="5"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 5 column 8" data-a="H" data-r="4" data-c="7"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 5 column 15" data-a="M" data-r="4" data-c="14"></div><div class="xc"><input maxlength="1" aria-label="Row 6 column 1" data-a="N" data-r="5" data-c="0"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 6 column 3" data-a="S" data-r="5" data-c="2"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><span class="xn">8</span><input maxlength="1" aria-label="Row 6 column 7" data-a="L" data-r="5" data-c="6"></div><div class="xc"><input maxlength="1" aria-label="Row 6 column 8" data-a="E" data-r="5" data-c="7"></div><div class="xc"><input maxlength="1" aria-label="Row 6 column 9" data-a="G" data-r="5" data-c="8"></div><div class="xc"><input maxlength="1" aria-label="Row 6 column 10" data-a="E" data-r="5" data-c="9"></div><div class="xc"><input maxlength="1" aria-label="Row 6 column 11" data-a="N" data-r="5" data-c="10"></div><div class="xc"><input maxlength="1" aria-label="Row 6 column 12" data-a="D" data-r="5" data-c="11"></div><div class="xc"><input maxlength="1" aria-label="Row 6 column 13" data-a="A" data-r="5" data-c="12"></div><div class="xc"><span class="xn">9</span><input maxlength="1" aria-label="Row 6 column 14" data-a="R" data-r="5" data-c="13"></div><div class="xc"><input maxlength="1" aria-label="Row 6 column 15" data-a="Y" data-r="5" data-c="14"></div><div class="xc"><input maxlength="1" aria-label="Row 7 column 1" data-a="A" data-r="6" data-c="0"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><span class="xn">10</span><input maxlength="1" aria-label="Row 7 column 5" data-a="B" data-r="6" data-c="4"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 7 column 8" data-a="T" data-r="6" data-c="7"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 7 column 14" data-a="E" data-r="6" data-c="13"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 8 column 1" data-a="N" data-r="7" data-c="0"></div><div class="xb"></div><div class="xb"></div><div class="xc"><span class="xn">11</span><input maxlength="1" aria-label="Row 8 column 4" data-a="N" data-r="7" data-c="3"></div><div class="xc"><input maxlength="1" aria-label="Row 8 column 5" data-a="A" data-r="7" data-c="4"></div><div class="xc"><input maxlength="1" aria-label="Row 8 column 6" data-a="N" data-r="7" data-c="5"></div><div class="xc"><input maxlength="1" aria-label="Row 8 column 7" data-a="O" data-r="7" data-c="6"></div><div class="xc"><input maxlength="1" aria-label="Row 8 column 8" data-a="T" data-r="7" data-c="7"></div><div class="xc"><input maxlength="1" aria-label="Row 8 column 9" data-a="U" data-r="7" data-c="8"></div><div class="xc"><span class="xn">12</span><input maxlength="1" aria-label="Row 8 column 10" data-a="B" data-r="7" data-c="9"></div><div class="xc"><input maxlength="1" aria-label="Row 8 column 11" data-a="E" data-r="7" data-c="10"></div><div class="xc"><span class="xn">13</span><input maxlength="1" aria-label="Row 8 column 12" data-a="S" data-r="7" data-c="11"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 8 column 14" data-a="D" data-r="7" data-c="13"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 9 column 1" data-a="A" data-r="8" data-c="0"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 9 column 5" data-a="S" data-r="8" data-c="4"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 9 column 8" data-a="I" data-r="8" data-c="7"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 9 column 10" data-a="U" data-r="8" data-c="9"></div><div class="xb"></div><div class="xc"><span class="xn">14</span><input maxlength="1" aria-label="Row 9 column 12" data-a="C" data-r="8" data-c="11"></div><div class="xc"><input maxlength="1" aria-label="Row 9 column 13" data-a="O" data-r="8" data-c="12"></div><div class="xc"><input maxlength="1" aria-label="Row 9 column 14" data-a="S" data-r="8" data-c="13"></div><div class="xc"><input maxlength="1" aria-label="Row 9 column 15" data-a="S" data-r="8" data-c="14"></div><div class="xb"></div><div class="xc"><span class="xn">15</span><input maxlength="1" aria-label="Row 10 column 2" data-a="B" data-r="9" data-c="1"></div><div class="xc"><input maxlength="1" aria-label="Row 10 column 3" data-a="A" data-r="9" data-c="2"></div><div class="xc"><input maxlength="1" aria-label="Row 10 column 4" data-a="G" data-r="9" data-c="3"></div><div class="xc"><input maxlength="1" aria-label="Row 10 column 5" data-a="E" data-r="9" data-c="4"></div><div class="xc"><input maxlength="1" aria-label="Row 10 column 6" data-a="L" data-r="9" data-c="5"></div><div class="xc"><input maxlength="1" aria-label="Row 10 column 7" data-a="S" data-r="9" data-c="6"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 10 column 10" data-a="I" data-r="9" data-c="9"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 10 column 12" data-a="I" data-r="9" data-c="11"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 10 column 14" data-a="H" data-r="9" data-c="13"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 11 column 5" data-a="M" data-r="10" data-c="4"></div><div class="xb"></div><div class="xb"></div><div class="xc"><span class="xn">16</span><input maxlength="1" aria-label="Row 11 column 8" data-a="H" data-r="10" data-c="7"></div><div class="xc"><input maxlength="1" aria-label="Row 11 column 9" data-a="O" data-r="10" data-c="8"></div><div class="xc"><input maxlength="1" aria-label="Row 11 column 10" data-a="L" data-r="10" data-c="9"></div><div class="xc"><input maxlength="1" aria-label="Row 11 column 11" data-a="U" data-r="10" data-c="10"></div><div class="xc"><input maxlength="1" aria-label="Row 11 column 12" data-a="E" data-r="10" data-c="11"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 11 column 14" data-a="I" data-r="10" data-c="13"></div><div class="xb"></div><div class="xb"></div><div class="xc"><span class="xn">17</span><input maxlength="1" aria-label="Row 12 column 2" data-a="C" data-r="11" data-c="1"></div><div class="xc"><input maxlength="1" aria-label="Row 12 column 3" data-a="E" data-r="11" data-c="2"></div><div class="xc"><input maxlength="1" aria-label="Row 12 column 4" data-a="M" data-r="11" data-c="3"></div><div class="xc"><input maxlength="1" aria-label="Row 12 column 5" data-a="E" data-r="11" data-c="4"></div><div class="xc"><input maxlength="1" aria-label="Row 12 column 6" data-a="N" data-r="11" data-c="5"></div><div class="xc"><input maxlength="1" aria-label="Row 12 column 7" data-a="T" data-r="11" data-c="6"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 12 column 10" data-a="D" data-r="11" data-c="9"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 12 column 12" data-a="N" data-r="11" data-c="11"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 12 column 14" data-a="F" data-r="11" data-c="13"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 13 column 5" data-a="N" data-r="12" data-c="4"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 13 column 10" data-a="E" data-r="12" data-c="9"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 13 column 12" data-a="C" data-r="12" data-c="11"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 13 column 14" data-a="T" data-r="12" data-c="13"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 14 column 5" data-a="T" data-r="13" data-c="4"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 14 column 10" data-a="R" data-r="13" data-c="9"></div><div class="xb"></div><div class="xc"><input maxlength="1" aria-label="Row 14 column 12" data-a="E" data-r="13" data-c="11"></div><div class="xb"></div><div class="xb"></div><div class="xb"></div></div>
+      <div class="xclues">
+        <div><h3 class="hed">Across</h3><ol><li><b>1</b> The TiT of EVE, according to Entropy (9)</li><li><b>6</b> What at least three TiT members were caught doing (8)</li><li><b>7</b> Emoji left hanging for three hours (4)</li><li><b>8</b> Specialist tier H3O couldn&#x27;t roll in 32 tries (9)</li><li><b>11</b> Coss bought about 22k of these at twice market (9)</li><li><b>14</b> New leader of PvP (4)</li><li><b>15</b> Boiled, then baked, per the bread corner (6)</li><li><b>16</b> Called the boosting first (5)</li><li><b>17</b> Lime rocks plus dust, per sobeantuh (6)</li></ol></div>
+        <div><h3 class="hed">Down</h3><ol><li><b>2</b> Ore and ___, advertised all night (5)</li><li><b>3</b> Loving description of TiT&#x27;s Factorio base (9)</li><li><b>4</b> Bet his own ban on Redshift&#x27;s innocence (5)</li><li><b>5</b> &#x27;Fake items&#x27; nobody really buys on the exchange (4)</li><li><b>6</b> Rearden Steel&#x27;s proposed new name (6)</li><li><b>9</b> Jailed company whose icon isn&#x27;t even red (8)</li><li><b>10</b> There is no escape from Amy&#x27;s (8)</li><li><b>12</b> Dev who delivered the 19:59 verdict (7)</li><li><b>13</b> Coss has declared war on it, at T4 (7)</li></ol></div>
+        <div class="xbtns"><button type="button" id="xcheck">Check answers</button><button type="button" id="xreveal">Reveal all</button><button type="button" id="xclear">Clear</button><span id="xmsg" role="status"></span></div>
+      </div>
+    </div>
+
+    <hr class="heavy">
+
+    <div class="grid">
+      <div>
+        <h2 class="hed">Your stars, by guild</h2>
+        <p class="byline">Horoscopes by Madame Exchange, who has never rolled a legendary</p>
+        <dl class="scopes">
+          <dt>TiT</dt><dd>You will ask to be banned again this week. The stars regret to inform you it will last five minutes. Lucky good: cheap rations.</dd>
+          <dt>GR</dt><dd>A 2.5% day returns to you. Send the 21st recruitment message; it is the one that lands. Avoid cows.</dd>
+          <dt>ATS</dt><dd>A door closed, a door is being knocked on. Check your nanoweave contracts twice before accepting blind.</dd>
+          <dt>RAS</dt><dd>A great fruiting is upon you. Embrace your new names, but do not follow anyone into the basement.</dd>
+          <dt>PvP</dt><dd>Three new planets bring four DMs. This ratio is fixed by the heavens. Science trembles.</dd>
+          <dt>GP</dt><dd>Top 6 in bases becomes top 5 if you stop reading general. You will not stop reading general.</dd>
+          <dt>RNK</dt><dd>39 of 40 seats filled. The fortieth awaits someone with standards. The stars are unsure who.</dd>
+          <dt>GTB</dt><dd>Lime and dust align. Your cement sets on schedule, and the exchange welcomes you with open arms.</dd>
+          <dt>F4T</dt><dd>You will keep refreshing general chat purely for the entertainment. This is the correct choice.</dd>
+          <dt>FJA</dt><dd>Your cell is spacious and your warehouse is not. A visitor is coming. Probably Cracklor.</dd>
+        </dl>
+      </div>
+      <aside>
+        <div class="box">
+          <h3 class="hed">Who said it?</h3>
+          <ol class="quiz">
+            <li>"A deal is a deal."</li>
+            <li>"Self suf is worse than death."</li>
+            <li>"Redshift's icon isn't even red."</li>
+            <li>"I have made a grave, grave error."</li>
+            <li>"Its not full, we're 39/40."</li>
+            <li>"Chem is bae."</li>
+            <li>"Prestige, always prestige."</li>
+            <li>"I can't count."</li>
+          </ol>
+          <p class="pick">Pick from: Bob Corp, Coss, Cracklor, Farmy, Holue, Mittcb, Sparky, Void LLC.</p>
+          <details class="quiz-ans"><summary>Show answers</summary><p>1 Farmy. 2 Holue. 3 Bob Corp. 4 Cracklor. 5 Sparky. 6 Coss. 7 Mittcb. 8 Void LLC.</p></details>
+        </div>
+        <div class="box" style="margin-top:1.2rem">
+          <h3 class="hed">Exchange weather</h3>
+          <p><strong>Today:</strong> heavy boosting early, clearing to scattered jail sentences by evening. Cow prices unseasonably stable at one unit.</p>
+          <p style="margin-bottom:0"><strong>Outlook:</strong> T4 science flooding expected from the PvP front. Exec trading remains a distant Christmas mirage.</p>
+        </div>
+      </aside>
+    </div>
+    <p class="xanswers">Crossword answers. Across: 1 GOONSWARM; 6 BOOSTING; 7 PEAR; 8 LEGENDARY; 11 NANOTUBES; 14 COSS; 15 BAGELS; 16 HOLUE; 17 CEMENT. Down: 2 ORBIT; 3 SPAGHETTI; 4 FARMY; 5 COWS; 6 BANANA; 9 REDSHIFT; 10 BASEMENT; 12 BUILDER; 13 SCIENCE.</p>
+  </section>
+
+  <div class="pager">
+    <button id="prev">Previous page</button>
+    <button id="next">Next page</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var pages=[].slice.call(document.querySelectorAll('.page'));
+  var tabs=[].slice.call(document.querySelectorAll('nav.pages button'));
+  var prev=document.getElementById('prev'), next=document.getElementById('next');
+  var cur=0;
+  function show(i,scroll){
+    cur=Math.max(0,Math.min(pages.length-1,i));
+    pages.forEach(function(p,j){p.classList.toggle('on',j===cur)});
+    tabs.forEach(function(t,j){ if(j===cur){t.setAttribute('aria-current','page')} else {t.removeAttribute('aria-current')} });
+    prev.disabled=cur===0; next.disabled=cur===pages.length-1;
+    try{history.replaceState(null,'','#page-'+(cur+1))}catch(e){}
+    if(scroll){window.scrollTo({top:0,behavior:'auto'})}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(+t.dataset.p,true)})});
+  prev.addEventListener('click',function(){show(cur-1,true)});
+  next.addEventListener('click',function(){show(cur+1,true)});
+  var m=(location.hash||'').match(/page-(\d)/);
+  show(m?+m[1]-1:0,false);
+})();
+</script>
+
+<script>
+(function(){
+  var inputs=[].slice.call(document.querySelectorAll('.xc input'));if(!inputs.length)return;
+  var at={};inputs.forEach(function(i){at[i.dataset.r+','+i.dataset.c]=i});
+  var dir='A';
+  function nb(i,d,s){var r=+i.dataset.r,c=+i.dataset.c;return d==='A'?at[r+','+(c+s)]:at[(r+s)+','+c]}
+  inputs.forEach(function(i){
+    i.addEventListener('focus',function(){ if(!nb(i,dir,1)&&!nb(i,dir,-1)) dir=dir==='A'?'D':'A'; });
+    i.addEventListener('click',function(){ if(nb(i,'A',1)||nb(i,'A',-1)){ if(nb(i,'D',1)||nb(i,'D',-1)) dir=dir==='A'?'D':'A'; }});
+    i.addEventListener('input',function(){i.value=i.value.slice(-1).toUpperCase();i.classList.remove('bad','good');var n=nb(i,dir,1);if(i.value&&n)n.focus()});
+    i.addEventListener('keydown',function(e){
+      var m={ArrowRight:['A',1],ArrowLeft:['A',-1],ArrowDown:['D',1],ArrowUp:['D',-1]}[e.key];
+      if(m){var n=nb(i,m[0],m[1]);if(n){dir=m[0];n.focus();e.preventDefault()}}
+      if(e.key==='Backspace'&&!i.value){var p=nb(i,dir,-1);if(p){p.focus();p.value='';e.preventDefault()}}
+    });
+  });
+  var msg=document.getElementById('xmsg');
+  document.getElementById('xcheck').addEventListener('click',function(){
+    var ok=0,bad=0,empty=0;inputs.forEach(function(i){i.classList.remove('bad','good');if(!i.value){empty++;return}
+      if(i.value===i.dataset.a){ok++;i.classList.add('good')}else{bad++;i.classList.add('bad')}});
+    msg.textContent=bad?bad+' letters wrong, marked in red.':(empty?'All correct so far. '+empty+' squares to go.':'Solved. The devs have been notified of your boosting.');
+  });
+  document.getElementById('xreveal').addEventListener('click',function(){inputs.forEach(function(i){i.value=i.dataset.a;i.classList.remove('bad','good')});msg.textContent='Revealed. No medal for you.'});
+  document.getElementById('xclear').addEventListener('click',function(){inputs.forEach(function(i){i.value='';i.classList.remove('bad','good')});msg.textContent=''});
+})();
+</script>
+</body>
+</html>
