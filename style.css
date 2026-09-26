@@ -124,6 +124,48 @@ ol.timeline time { font-family: Oswald, sans-serif; font-weight: 700; color: var
 .ad strong { display: block; font-family: Oswald, sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: .2rem; }
 .note { font-style: italic; color: var(--ink-soft); border-left: 3px solid var(--red); padding-left: .8rem; margin: 1.5rem 0; }
 
+/* Business page */
+.market { margin: 0 0 2rem; }
+.market-meta { font-size: .85rem; font-style: italic; color: var(--ink-soft); margin: 0 0 1rem; }
+.market-cols { display: grid; gap: 1.5rem; }
+@media (min-width: 34rem) { .market-cols { grid-template-columns: 1fr 1fr; } }
+.market h3, .market + .box h3 {
+  font-family: Oswald, sans-serif; font-weight: 700; font-size: 1rem; text-transform: uppercase;
+  letter-spacing: .04em; border-bottom: 3px solid var(--rule); padding-bottom: .25rem; margin: 0 0 .5rem;
+}
+table.ticker { width: 100%; border-collapse: collapse; font-size: .95rem; }
+table.ticker td { padding: .4rem .3rem; border-bottom: 1px dotted var(--ink-soft); }
+table.ticker .mat { font-weight: 600; }
+table.ticker .price, table.ticker .change { text-align: right; font-family: Oswald, sans-serif; white-space: nowrap; }
+table.ticker .change { font-weight: 700; }
+table.ticker .change.down { color: var(--red); }
+ol.charts-list { list-style: none; margin: 0; padding: 0; }
+ol.charts-list li { display: flex; align-items: baseline; gap: .6rem; padding: .35rem 0; border-bottom: 1px dotted var(--ink-soft); font-size: .98rem; }
+ol.charts-list .rank { font-family: Oswald, sans-serif; font-weight: 700; color: var(--red); width: 1.2rem; }
+ol.charts-list .name { flex: 1; }
+ol.charts-list .count { font-family: Oswald, sans-serif; color: var(--ink-soft); font-size: .85rem; }
+
+/* Most wanted */
+.box.wanted { border: 3px double var(--rule); padding: 1rem 1.2rem 1.4rem; }
+.box.wanted h3 { border-bottom: 0; padding-bottom: 0; font-size: 1.4rem; margin: .3rem 0 .2rem; }
+.wanted .charge {
+  font-family: Oswald, sans-serif; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .03em; font-size: .85rem; color: var(--ink-soft); margin: 0 0 .6rem;
+}
+.wanted .reward { font-weight: 700; margin-top: .6rem; }
+
+/* Horoscopes */
+.scopes { margin: 0; }
+.scopes dt { font-family: Oswald, sans-serif; font-weight: 700; color: var(--red); margin-top: .8rem; }
+.scopes dt:first-child { margin-top: 0; }
+.scopes dd { margin: .15rem 0 0; }
+
+/* Agony aunt */
+.agony-item { margin-bottom: 1.1rem; }
+.agony-item .q { margin: 0 0 .2rem; }
+.agony-item .sig { font-style: italic; color: var(--ink-soft); margin: 0 0 .4rem; }
+.agony-item .a { margin: 0; padding-left: .8rem; border-left: 3px solid var(--red); }
+
 /* Crossword */
 details.crossword summary {
   cursor: pointer; font-family: Oswald, sans-serif; font-weight: 700; font-size: .95rem;
