@@ -44,6 +44,8 @@ code { font-size: .9em; }
   font-size: clamp(2.3rem, 10vw, 5.4rem); line-height: 1.05; margin: .6rem 0 .15rem;
 }
 .motto { margin: 0; font-style: italic; color: var(--ink-soft); }
+.support { margin: .3rem 0 0; font-size: .78rem; }
+.support a { color: var(--ink-soft); }
 .dateline { margin: .2rem 0 0; font-family: Oswald, sans-serif; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
 .banner {
   display: flex; flex-wrap: wrap; justify-content: center; gap: .15rem .8rem;
@@ -159,6 +161,13 @@ ol.charts-list .count { font-family: Oswald, sans-serif; color: var(--ink-soft);
 .scopes dt { font-family: Oswald, sans-serif; font-weight: 700; color: var(--red); margin-top: .8rem; }
 .scopes dt:first-child { margin-top: 0; }
 .scopes dd { margin: .15rem 0 0; }
+
+/* Who said it? */
+ol.quiz { margin: 0 0 .6rem; padding-left: 1.2rem; }
+ol.quiz li { margin-bottom: .4rem; font-style: italic; }
+.pick { font-size: .9rem; color: var(--ink-soft); margin: 0 0 .6rem; }
+details.quiz-ans summary { cursor: pointer; font-family: Oswald, sans-serif; font-weight: 700; font-size: .85rem; text-transform: uppercase; letter-spacing: .03em; }
+details.quiz-ans p { margin: .5rem 0 0; }
 
 /* Agony aunt */
 .agony-item { margin-bottom: 1.1rem; }
