@@ -124,6 +124,8 @@ ol.timeline time { font-family: Oswald, sans-serif; font-weight: 700; color: var
 .classifieds { columns: 3 14rem; column-gap: 1.25rem; }
 .ad { break-inside: avoid; border: 1px solid var(--rule); padding: .7rem .8rem; margin: 0 0 1rem; font-size: .96rem; }
 .ad strong { display: block; font-family: Oswald, sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: .2rem; }
+.ad-requested { border-color: var(--red); border-width: 2px; }
+.ad-tag { display: block; margin-top: .35rem; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: var(--red); }
 .note { font-style: italic; color: var(--ink-soft); border-left: 3px solid var(--red); padding-left: .8rem; margin: 1.5rem 0; }
 
 /* Business page */
