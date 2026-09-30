@@ -128,6 +128,13 @@ ol.timeline time { font-family: Oswald, sans-serif; font-weight: 700; color: var
 .ad-tag { display: block; margin-top: .35rem; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: var(--red); }
 .note { font-style: italic; color: var(--ink-soft); border-left: 3px solid var(--red); padding-left: .8rem; margin: 1.5rem 0; }
 
+.box.editorial { border-left: 4px solid var(--red); padding-left: 1rem; }
+.box.editorial .editorial-head {
+  font-family: Oswald, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .03em;
+  margin: 0 0 .6rem;
+}
+.box.editorial .sig { text-align: right; font-style: italic; color: var(--ink-soft); margin: .6rem 0 0; }
+
 /* Business page */
 .market { margin: 0 0 2rem; }
 .market-meta { font-size: .85rem; font-style: italic; color: var(--ink-soft); margin: 0 0 1rem; }
